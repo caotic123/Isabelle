@@ -1,0 +1,27 @@
+%
+\begin{isabellebody}%
+\setisabellecontext{Try{\isadigit{0}}}%
+latex_delimname=theorydocument_latexoffset=165end_offset=167\isanewline
+\isanewline
+latex_tagname=theory\isakeywordONE{document_latexoffset=167end_offset=173theory}\isamarkupfalse%
+document_latexoffset=173end_offset=174\ document_latexoffset=174end_offset=178Try{\isadigit{0}}document_latexoffset=178end_offset=181\isanewline
+\ \ \isakeywordTWO{document_latexoffset=181end_offset=188imports}document_latexoffset=188end_offset=189\ document_latexoffset=189end_offset=193Puredocument_latexoffset=193end_offset=196\isanewline
+\ \ \isakeywordTWO{document_latexoffset=196end_offset=204keywords}document_latexoffset=204end_offset=205\ {\isachardoublequoteopen}document_latexoffset=206end_offset=210try{\isadigit{0}}{\isachardoublequoteclose}document_latexoffset=211end_offset=212\ document_latexoffset=212end_offset=214{\isacharcolon}{\kern0pt}{\isacharcolon}{\kern0pt}document_latexoffset=214end_offset=215\ document_latexoffset=215end_offset=219diagdocument_latexoffset=219end_offset=220\isanewline
+\isakeywordTWO{document_latexoffset=220end_offset=225begin}latex_delimname=theorydocument_latexoffset=225end_offset=227\isanewline
+\isanewline
+latex_delimname=MLlatex_tagname=ML\isakeywordONE{document_latexoffset=227end_offset=234ML{\isacharunderscore}{\kern0pt}file}\isamarkupfalse%
+document_latexoffset=234end_offset=235\ {\isacartoucheopen}document_latexoffset=236end_offset=249Tools{\isacharslash}{\kern0pt}try{\isadigit{0}}{\isachardot}{\kern0pt}ML{\isacartoucheclose}document_latexoffset=250end_offset=251\isanewline
+\isakeywordONE{document_latexoffset=251end_offset=258ML{\isacharunderscore}{\kern0pt}file}\isamarkupfalse%
+document_latexoffset=258end_offset=259\ {\isacartoucheopen}document_latexoffset=260end_offset=278Tools{\isacharslash}{\kern0pt}try{\isadigit{0}}{\isacharunderscore}{\kern0pt}util{\isachardot}{\kern0pt}ML{\isacartoucheclose}document_latexoffset=279end_offset=281\isanewline
+\isanewline
+\isakeywordONE{document_latexoffset=281end_offset=283ML}\isamarkupfalse%
+document_latexoffset=283end_offset=284\ {\isacartoucheopen}document_latexoffset=285end_offset=482\isanewline
+val\ {\isacharparenleft}{\kern0pt}{\isacharparenright}{\kern0pt}\ {\isacharequal}{\kern0pt}\isanewline
+\ \ Try{\isadigit{0}}{\isachardot}{\kern0pt}register{\isacharunderscore}{\kern0pt}proof{\isacharunderscore}{\kern0pt}method\ {\isachardoublequote}{\kern0pt}simp{\isachardoublequote}{\kern0pt}\ {\isacharbraceleft}{\kern0pt}run{\isacharunderscore}{\kern0pt}if{\isacharunderscore}{\kern0pt}auto{\isacharunderscore}{\kern0pt}try\ {\isacharequal}{\kern0pt}\ true{\isacharbraceright}{\kern0pt}\isanewline
+\ \ \ \ {\isacharparenleft}{\kern0pt}Try{\isadigit{0}}{\isacharunderscore}{\kern0pt}Util{\isachardot}{\kern0pt}apply{\isacharunderscore}{\kern0pt}raw{\isacharunderscore}{\kern0pt}named{\isacharunderscore}{\kern0pt}method\ {\isachardoublequote}{\kern0pt}simp{\isachardoublequote}{\kern0pt}\ false\ Try{\isadigit{0}}{\isacharunderscore}{\kern0pt}Util{\isachardot}{\kern0pt}simp{\isacharunderscore}{\kern0pt}attrs\ Simplifier{\isacharunderscore}{\kern0pt}Trace{\isachardot}{\kern0pt}disable{\isacharparenright}{\kern0pt}\isanewline
+\ \ handle\ Symtab{\isachardot}{\kern0pt}DUP\ {\isacharunderscore}{\kern0pt}\ {\isacharequal}{\kern0pt}{\isachargreater}{\kern0pt}\ {\isacharparenleft}{\kern0pt}{\isacharparenright}{\kern0pt}\isanewline
+{\isacartoucheclose}latex_delimname=MLdocument_latexoffset=483end_offset=485\isanewline
+\isanewline
+latex_delimname=theorylatex_tagname=theory\isakeywordTWO{document_latexoffset=485end_offset=488end}\isamarkupfalse%
+latex_delimname=theory%
+\end{isabellebody}%

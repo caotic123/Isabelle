@@ -1,0 +1,233 @@
+(* :mode=isabelle-options: *)
+
+public option jedit_logic : string = ""
+  -- "logic session name (change requires restart)"
+
+public option jedit_print_mode : string = ""
+  -- "default print modes for output, separated by commas (change requires restart)"
+
+public option jedit_auto_resolve : bool = false
+  -- "automatically resolve auxiliary files within the document model"
+
+public option jedit_reset_font_size : int = 18
+  -- "reset main text font size"
+
+public option jedit_font_scale : real = 1.0
+  -- "scale factor of add-on panels wrt. main text font"
+
+public option jedit_popup_font_scale : real = 0.85
+  -- "scale factor of popups wrt. main text font"
+
+public option jedit_popup_bounds : real = 0.5
+  -- "relative bounds of popup window wrt. logical screen size"
+
+public option jedit_tooltip_delay : real = 0.75
+  -- "open/close delay for document tooltips (seconds)"
+
+public option jedit_tooltip_margin : int = 60
+  -- "margin for tooltip pretty-printing"
+
+public option jedit_structure_limit : int = 1000
+  -- "maximum number of lines to scan for language structure"
+
+public option jedit_symbols_search_limit : int = 50
+  -- "maximum number of symbols in search result"
+
+public option jedit_text_overview : bool = true
+  -- "paint text overview column"
+
+public option jedit_focus_modifier : string = "CS"
+  -- "keyboard modifier to enable entity focus regardless of def visibility"
+
+public option jedit_toggle_full_screen : bool = false
+  -- "use original jEdit action toggle-full-screen instead of Isabelle/jEdit variant"
+
+public option isabelle_fonts_hinted : bool = true
+  -- "use hinted Isabelle DejaVu fonts (change requires restart)"
+
+
+section "Indentation"
+
+public option jedit_indent_input : bool = true
+  -- "indentation of Isabelle keywords after input (typed character or completion)"
+
+public option jedit_indent_newline : bool = true
+  -- "indentation of Isabelle keywords on ENTER (action isabelle.newline)"
+
+public option jedit_indent_script : bool = true
+  -- "indent unstructured proof script ('apply' etc.) via number of subgoals"
+
+public option jedit_indent_script_limit : int = 20
+  -- "maximum indentation of unstructured proof script ('apply' etc.)"
+
+
+section "Completion"
+
+public option jedit_completion : bool = true
+  -- "enable completion popup"
+
+public option jedit_completion_select_enter : bool = false
+  -- "select completion item via ENTER"
+
+public option jedit_completion_select_tab : bool = true
+  -- "select completion item via TAB"
+
+public option jedit_completion_context : bool = true
+  -- "use semantic language context for completion"
+
+public option jedit_completion_delay : real = 0.5
+  -- "delay for completion popup (seconds)"
+
+public option jedit_completion_immediate : bool = true
+  -- "insert uniquely completed abbreviation immediately into buffer"
+
+
+section "Rendering of Document Content"
+
+option outdated_color : string = "EEE3E3FF" for color_dialog
+option unprocessed_color : string = "FFA0A0FF" for color_dialog
+option unprocessed1_color : string = "FFA0A032" for color_dialog
+option running_color : string = "610061FF" for color_dialog
+option running1_color : string = "61006164" for color_dialog
+option bullet_color : string = "000000FF" for color_dialog
+option writeln_color : string = "C0C0C0FF" for color_dialog
+option information_color : string = "C1DFEEFF" for color_dialog
+option warning_color : string = "FF8C00FF" for color_dialog
+option legacy_color : string = "FF8C00FF" for color_dialog
+option error_color : string = "B22222FF" for color_dialog
+option ok_color : string = "000000FF" for color_dialog
+option failed_color : string = "B22222FF" for color_dialog
+option writeln_message_color : string = "F0F0F0FF" for color_dialog
+option information_message_color : string = "DCEAF3FF" for color_dialog
+option tracing_message_color : string = "F0F8FFFF" for color_dialog
+option warning_message_color : string = "EEE8AAFF" for color_dialog
+option legacy_message_color : string = "EEE8AAFF" for color_dialog
+option error_message_color : string = "FFC1C1FF" for color_dialog
+option spell_checker_color : string = "0000FFFF" for color_dialog
+option bad_color : string = "FF6A6A64" for color_dialog
+option canceled_color : string = "FF6A6A64" for color_dialog
+option intensify_color : string = "FFCC6664" for color_dialog
+option entity_color : string = "CCD9FF80" for color_dialog
+option entity_ref_color : string = "800080FF" for color_dialog
+option breakpoint_disabled_color : string = "CCCC0080" for color_dialog
+option breakpoint_enabled_color : string = "FF9966FF" for color_dialog
+option quoted_color : string = "8B8B8B19" for color_dialog
+option antiquoted_color : string = "FFC83219" for color_dialog
+option antiquote_color : string = "6600CCFF" for color_dialog
+option raw_text_color : string = "6600CCFF" for color_dialog
+option plain_text_color : string = "CC6600FF" for color_dialog
+option highlight_color : string = "50505032" for color_dialog
+option hyperlink_color : string = "000000FF" for color_dialog
+option active_color : string = "DCDCDCFF" for color_dialog
+option active_hover_color : string = "9DC75DFF" for color_dialog
+option active_result_color : string = "999966FF" for color_dialog
+option keyword1_color : string = "006699FF" for color_dialog
+option keyword2_color : string = "009966FF" for color_dialog
+option keyword3_color : string = "0099FFFF" for color_dialog
+option quasi_keyword_color : string = "9966FFFF" for color_dialog
+option improper_color : string = "FF5050FF" for color_dialog
+option operator_color : string = "323232FF" for color_dialog
+option comment1_color : string = "CC0000FF" for color_dialog
+option comment2_color : string = "FF8400FF" for color_dialog
+option comment3_color : string = "6600CCFF" for color_dialog
+option caret_debugger_color : string = "FF9966FF" for color_dialog
+option caret_invisible_color : string = "50000080" for color_dialog
+option completion_color : string = "0000FFFF" for color_dialog
+option search_color : string = "66FFFF64" for color_dialog
+
+option tfree_color : string = "A020F0FF" for color_dialog
+option tvar_color : string = "A020F0FF" for color_dialog
+option free_color : string = "0000FFFF" for color_dialog
+option skolem_color : string = "D2691EFF" for color_dialog
+option bound_color : string = "008000FF" for color_dialog
+option var_color : string = "00009BFF" for color_dialog
+option inner_numeral_color : string = "FF0000FF" for color_dialog
+option inner_quoted_color : string = "FF00CCFF" for color_dialog
+option inner_cartouche_color : string = "CC6600FF" for color_dialog
+option dynamic_color : string = "7BA428FF" for color_dialog
+option class_parameter_color : string = "D2691EFF" for color_dialog
+
+option markdown_bullet1_color : string = "DAFEDAFF" for color_dialog
+option markdown_bullet2_color : string = "FFF0CCFF" for color_dialog
+option markdown_bullet3_color : string = "E7E7FFFF" for color_dialog
+option markdown_bullet4_color : string = "FFE0F0FF" for color_dialog
+
+option outdated_color_dark : string = "B0B0B0FF" for color_dialog
+option unprocessed_color_dark : string = "D89090FF" for color_dialog
+option unprocessed1_color_dark : string = "330033FF" for color_dialog
+option running_color_dark : string = "7FBFFF00" for color_dialog
+option running1_color_dark : string = "590259FF" for color_dialog
+option bullet_color_dark : string = "EAEAEAFF" for color_dialog
+option writeln_color_dark : string = "9C9C9CFF" for color_dialog
+option information_color_dark : string = "77B800FF" for color_dialog
+option warning_color_dark : string = "FF8C00FF" for color_dialog
+option legacy_color_dark : string = "FF8C00FF" for color_dialog
+option error_color_dark : string = "FF7070FF" for color_dialog
+option ok_color_dark : string = "FFFFFFFF" for color_dialog
+option failed_color_dark : string = "FF6B6BFF" for color_dialog
+option writeln_message_color_dark : string = "444444FF" for color_dialog
+option information_message_color_dark : string = "221E40FF" for color_dialog
+option tracing_message_color_dark : string = "6969A749" for color_dialog
+option warning_message_color_dark : string = "FF7A007F" for color_dialog
+option legacy_message_color_dark : string = "716D4BFF" for color_dialog
+option error_message_color_dark : string = "5B1220FF" for color_dialog
+option spell_checker_color_dark : string = "589EF9FF" for color_dialog
+option bad_color_dark : string = "620909FF" for color_dialog
+option canceled_color_dark : string = "F67979FF" for color_dialog
+option intensify_color_dark : string = "FFCC6664" for color_dialog
+option entity_color_dark : string = "330033FF" for color_dialog
+option entity_ref_color_dark : string = "E071DEFF" for color_dialog
+option breakpoint_disabled_color_dark : string = "CCCC0080" for color_dialog
+option breakpoint_enabled_color_dark : string = "FF9966FF" for color_dialog
+option quoted_color_dark : string = "FFFFFF0C" for color_dialog
+option antiquoted_color_dark : string = "EDEDED1B" for color_dialog
+option antiquote_color_dark : string = "FFE4E1FF" for color_dialog
+option raw_text_color_dark : string = "FFFFCCFF" for color_dialog
+option plain_text_color_dark : string = "F2A558FF" for color_dialog
+option highlight_color_dark : string = "50505032" for color_dialog
+option hyperlink_color_dark : string = "4DD2FFFF" for color_dialog
+option active_color_dark : string = "454594FF" for color_dialog
+option active_hover_color_dark : string = "4A4AC9FF" for color_dialog
+option active_result_color_dark : string = "A7A77BFF" for color_dialog
+option keyword1_color_dark : string = "F0E68CFF" for color_dialog
+option keyword2_color_dark : string = "009966FF" for color_dialog
+option keyword3_color_dark : string = "CC6600FF" for color_dialog
+option quasi_keyword_color_dark : string = "9999FFFF" for color_dialog
+option improper_color_dark : string = "F99F9FFF" for color_dialog
+option operator_color_dark : string = "DBDBDBFF" for color_dialog
+option comment1_color_dark : string = "87CEEBFF" for color_dialog
+option comment2_color_dark : string = "CD5C5CFF" for color_dialog
+option comment3_color_dark : string = "999900FF" for color_dialog
+option caret_debugger_color_dark : string = "FF9966FF" for color_dialog
+option caret_invisible_color_dark : string = "FFB8B880" for color_dialog
+option completion_color_dark : string = "4BBDF7FF" for color_dialog
+option search_color_dark : string = "66FFFF64" for color_dialog
+
+option tfree_color_dark : string = "C68CFDFF" for color_dialog
+option tvar_color_dark : string = "CE8DF7FF" for color_dialog
+option free_color_dark : string = "80B1FEFF" for color_dialog
+option skolem_color_dark : string = "FF99FFFF" for color_dialog
+option bound_color_dark : string = "76E9C6FF" for color_dialog
+option var_color_dark : string = "F0A860FF" for color_dialog
+option inner_numeral_color_dark : string = "FF8A8AFF" for color_dialog
+option inner_quoted_color_dark : string = "FF7AE4FF" for color_dialog
+option inner_cartouche_color_dark : string = "FF8A14FF" for color_dialog
+option dynamic_color_dark : string = "80CB8DFF" for color_dialog
+option class_parameter_color_dark : string = "E58948FF" for color_dialog
+
+option markdown_bullet1_color_dark : string = "181719FF" for color_dialog
+option markdown_bullet2_color_dark : string = "333333FF" for color_dialog
+option markdown_bullet3_color_dark : string = "000022FF" for color_dialog
+option markdown_bullet4_color_dark : string = "1B000DFF" for color_dialog
+
+
+section "Icons"
+
+option tooltip_close_icon : string = "idea-icons/actions/closeDarkGrey.svg"
+option tooltip_detach_icon : string = "idea-icons/actions/copy.svg"
+option gutter_information_icon : string = "idea-icons/general/information.svg"
+option gutter_warning_icon : string = "idea-icons/general/warning.svg"
+option gutter_legacy_icon : string = "idea-icons/runConfigurations/testFailed.svg"
+option gutter_error_icon : string = "idea-icons/general/error.svg"
+option process_passive_icon : string = "idea-icons/process/big/step_passive.svg?scale=0.5"
+option process_active_icons : string = "idea-icons/process/big/step_1.svg?scale=0.5:idea-icons/process/big/step_2.svg?scale=0.5:idea-icons/process/big/step_3.svg?scale=0.5:idea-icons/process/big/step_4.svg?scale=0.5:idea-icons/process/big/step_5.svg?scale=0.5:idea-icons/process/big/step_6.svg?scale=0.5:idea-icons/process/big/step_7.svg?scale=0.5:idea-icons/process/big/step_8.svg?scale=0.5"

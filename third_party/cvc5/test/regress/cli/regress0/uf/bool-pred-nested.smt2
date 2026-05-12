@@ -1,0 +1,7 @@
+(set-logic QF_UF)
+(declare-fun P (Bool Bool) Bool)
+(declare-const x Bool)
+(assert (= x true))
+(assert (= (P false false) false))
+(get-abduct e (not (= x (P x x))))
+(get-abduct-next)

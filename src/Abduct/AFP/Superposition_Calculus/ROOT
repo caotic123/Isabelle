@@ -1,0 +1,18 @@
+chapter AFP
+session Superposition_Calculus = Saturation_Framework_Extensions +
+  options [timeout = 900]
+  sessions
+    First_Order_Clause
+    Saturation_Framework
+    Saturation_Framework_Extensions
+    VeriComp
+  theories
+    Ground_Superposition_Completeness
+    Ground_Superposition_Soundness
+    Ground_Superposition_Welltypedness_Preservation
+    Superposition_Completeness
+    Superposition_Soundness
+    Superposition_Example
+  document_files
+    "root.bib"
+    "root.tex"

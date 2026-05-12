@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(make:*)",
+      "Bash(./build/bin/cvc5:*)",
+      "Bash(__NEW_LINE_8708960be800ea73__ echo \"=== Test 1: No :grammar-assertions \\(old behavior - should have z, x, y\\) ===\")",
+      "Bash(__NEW_LINE_6266a78daf3e4238__ echo \"\")",
+      "Bash(__NEW_LINE_c141d2d87af269ed__ echo \"\")",
+      "Bash(__NEW_LINE_0af92b7cbf26761c__ echo \"=== Test 1: No :grammar-assertions \\(old behavior - should have z, x, y\\) ===\")",
+      "Bash(__NEW_LINE_0af92b7cbf26761c__ echo \"\")",
+      "Bash(export CPATH=/opt/homebrew/include)",
+      "Bash(./bin/cvc5:*)",
+      "Bash(git stash:*)",
+      "Bash(git merge:*)",
+      "Bash(git pull:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(docker build:*)",
+      "Bash(open:*)",
+      "Bash(docker buildx:*)",
+      "Bash(docker buildx use:*)",
+      "Bash(docker buildx create:*)",
+      "Bash(docker context use:*)",
+      "Bash(osascript:*)",
+      "Bash(docker version:*)",
+      "Bash(pkill:*)",
+      "Bash(docker info:*)"
+    ]
+  }
+}

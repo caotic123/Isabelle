@@ -1,0 +1,7 @@
+chapter AFP
+
+session Test (AFP) = HOL +
+  options [timeout = 900]
+  sessions
+    "HOL-Computational_Algebra"
+    "HOL-Library"

@@ -1,0 +1,102 @@
+(set-logic HO_ALL)
+
+;; 1. Sort Definitions
+(declare-sort Nat$ 0)
+(declare-sort Num$ 0)
+(declare-sort Nat_set$ 0)
+(declare-sort Nat_nat_fun$ 0)
+(declare-sort Nat_bool_fun$ 0)
+
+;; 2. Variable Declarations
+(declare-var c$ Nat_nat_fun$)
+(declare-var i$ Nat$)
+(declare-var k$ Nat$)
+(declare-var n$ Nat$)
+(declare-var c$a Nat_nat_fun$)
+(declare-var k$a Nat$)
+(declare-var ka$ Nat$)
+(declare-var na$ Nat$)
+(declare-var uu$ Nat_nat_fun$)
+(declare-var fib$ (-> Nat$ Nat$))
+(declare-var k_a$ Nat$)
+(declare-var one$ Nat$)
+(declare-var suc$ (-> Nat$ Nat$))
+(declare-var sum$ (-> Nat_nat_fun$ Nat_set$ Nat$))
+(declare-var uua$ Nat_nat_fun$)
+(declare-var bit0$ (-> Num$ Num$))
+(declare-var less$ (-> Nat$ Nat_bool_fun$))
+(declare-var one$a Num$)
+(declare-var zero$ Nat$)
+(declare-var minus$ (-> Nat$ Nat$ Nat$))
+(declare-var is_fib$ Nat_bool_fun$)
+(declare-var member$ (-> Nat$ Nat_set$ Bool))
+(declare-var fun_app$ (-> Nat_nat_fun$ Nat$ Nat$))
+(declare-var less_eq$ (-> Nat$ Nat_bool_fun$))
+(declare-var numeral$ (-> Num$ Nat$))
+(declare-var fun_app$a (-> Nat_bool_fun$ Nat$ Bool))
+(declare-var inc_seq_on$ (-> Nat_nat_fun$ Nat_set$ Bool))
+(declare-var atLeastAtMost$ (-> Nat$ Nat$ Nat_set$))
+
+;; 3. Define the Abduct to synthesize
+(synth-fun A ((x Nat_bool_fun$) (y Nat$)) Bool)
+
+;; 4. Constraints
+(constraint 
+  (=> 
+    (and
+      ;; --- Background Theory ---
+      (forall ((?v0 Nat$)) (! (= (fun_app$ uua$ ?v0) (fib$ (fun_app$ c$ ?v0))) :pattern ((fun_app$ uua$ ?v0))))
+      (forall ((?v0 Nat$)) (! (= (fun_app$ uu$ ?v0) (fib$ (fun_app$ c$a ?v0))) :pattern ((fun_app$ uu$ ?v0))))
+      (= (fun_app$ c$ k_a$) i$)
+      (= (fun_app$ c$a ka$) i$)
+      (= (fun_app$ c$ k_a$) (fun_app$ c$a ka$))
+      (fun_app$a (less$ zero$) na$)
+      (= na$ (sum$ uu$ (atLeastAtMost$ zero$ ka$)))
+      (inc_seq_on$ c$a (atLeastAtMost$ zero$ (minus$ ka$ one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ ka$)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$a ?v0))))
+      (= na$ (sum$ uua$ (atLeastAtMost$ zero$ k_a$)))
+      (inc_seq_on$ c$ (atLeastAtMost$ zero$ (minus$ k_a$ one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ k_a$)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$ ?v0))))
+      
+      ;; Nested quantifier constraint (a12)
+      (forall ((?v0 Nat$)) (=> (and (fun_app$a (less$ ?v0) na$) (fun_app$a (less$ zero$) ?v0)) (forall ((?v1 Nat$)) (=> (and (= ?v0 (sum$ uu$ (atLeastAtMost$ zero$ ?v1))) (and (inc_seq_on$ c$a (atLeastAtMost$ zero$ (minus$ ?v1 one$))) (forall ((?v2 Nat$)) (=> (member$ ?v2 (atLeastAtMost$ zero$ ?v1)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$a ?v2)))))) (forall ((?v2 Nat$)) (=> (and (= ?v0 (sum$ uua$ (atLeastAtMost$ zero$ ?v2))) (and (inc_seq_on$ c$ (atLeastAtMost$ zero$ (minus$ ?v2 one$))) (forall ((?v3 Nat$)) (=> (member$ ?v3 (atLeastAtMost$ zero$ ?v2)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$ ?v3)))))) (and (= ?v1 ?v2) (forall ((?v3 Nat$)) (=> (member$ ?v3 (atLeastAtMost$ zero$ ?v1)) (= (fun_app$ c$a ?v3) (fun_app$ c$ ?v3)))))))))))
+      
+      (fun_app$a (less_eq$ (fib$ i$)) na$)
+      (fun_app$a (less$ na$) (fib$ (suc$ i$)))
+      (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) i$)
+      (fun_app$a (less$ zero$) n$)
+      (= n$ (sum$ uu$ (atLeastAtMost$ zero$ k$)))
+      (inc_seq_on$ c$a (atLeastAtMost$ zero$ (minus$ k$ one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ k$)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$a ?v0))))
+      
+      ;; FIXED LINE BELOW (removed extra parenthesis)
+      (= n$ (sum$ uua$ (atLeastAtMost$ zero$ k$a)))
+      
+      (inc_seq_on$ c$ (atLeastAtMost$ zero$ (minus$ k$a one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ k$a)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$ ?v0))))
+      (not (fun_app$a is_fib$ na$))
+      
+      ;; Nested quantifier constraint (a24)
+      (forall ((?v0 Nat$)) (=> (and (fun_app$a (less$ ?v0) na$) (fun_app$a (less$ zero$) ?v0)) (forall ((?v1 Nat$)) (=> (and (= ?v0 (sum$ uu$ (atLeastAtMost$ zero$ ?v1))) (and (inc_seq_on$ c$a (atLeastAtMost$ zero$ (minus$ ?v1 one$))) (forall ((?v2 Nat$)) (=> (member$ ?v2 (atLeastAtMost$ zero$ ?v1)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$a ?v2)))))) (forall ((?v2 Nat$)) (=> (and (= ?v0 (sum$ uua$ (atLeastAtMost$ zero$ ?v2))) (and (inc_seq_on$ c$ (atLeastAtMost$ zero$ (minus$ ?v2 one$))) (forall ((?v3 Nat$)) (=> (member$ ?v3 (atLeastAtMost$ zero$ ?v2)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$ ?v3)))))) (and (= ?v1 ?v2) (forall ((?v3 Nat$)) (=> (member$ ?v3 (atLeastAtMost$ zero$ ?v1)) (= (fun_app$ c$a ?v3) (fun_app$ c$ ?v3)))))))))))
+
+      (fun_app$a (less$ zero$) na$)
+      (= na$ (sum$ uu$ (atLeastAtMost$ zero$ ka$)))
+      (inc_seq_on$ c$a (atLeastAtMost$ zero$ (minus$ ka$ one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ ka$)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$a ?v0))))
+      (= na$ (sum$ uua$ (atLeastAtMost$ zero$ k_a$)))
+      (inc_seq_on$ c$ (atLeastAtMost$ zero$ (minus$ k_a$ one$)))
+      (forall ((?v0 Nat$)) (=> (member$ ?v0 (atLeastAtMost$ zero$ k_a$)) (fun_app$a (less_eq$ (numeral$ (bit0$ one$a))) (fun_app$ c$ ?v0))))
+      (forall ((?v0 Nat$) (?v1 Nat$)) (= (fun_app$a (less$ zero$) (minus$ ?v0 ?v1)) (fun_app$a (less$ ?v1) ?v0)))
+      (fun_app$a (less$ zero$) k_a$)
+      (forall ((?v0 Nat$) (?v1 Nat$)) (=> (and (fun_app$a (less$ zero$) ?v0) (fun_app$a (less$ zero$) ?v1)) (fun_app$a (less$ (minus$ ?v1 ?v0)) ?v1)))
+      (fun_app$a (less$ zero$) ka$)
+      (forall ((?v0 Nat_set$) (?v1 Nat_bool_fun$)) (= (forall ((?v2 Nat$)) (=> (member$ ?v2 ?v0) (fun_app$a ?v1 ?v2))) (forall ((?v2 Nat$)) (=> (member$ ?v2 ?v0) (fun_app$a ?v1 ?v2)))))
+      
+    )
+    
+    ;; --- Goal ---
+    (A (less$ zero$) (minus$ na$ (fib$ (fun_app$ c$a ka$))))
+  )
+)
+
+(check-synth)

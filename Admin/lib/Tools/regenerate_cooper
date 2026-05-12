@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#
+# Author: Florian Haftmann, TU Muenchen
+#
+# DESCRIPTION: regenerate ~~/src/HOL/Tools/Qelim/cooper_procedure.ML from theory HOL-Decision_Procs.Cooper
+
+isabelle process_theories \
+  -E '(in "~~/src/HOL/Tools/Qelim") [2] "HOL-Decision_Procs.Cooper:code/cooper_procedure.ML"' \
+  HOL-Decision_Procs.Cooper

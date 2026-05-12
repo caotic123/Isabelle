@@ -1,0 +1,9 @@
+session Abduct = HOL +
+  options [document = false]
+  theories
+    Abduct_Setup
+
+session Abduct_Lambda_Calculus in "Lambda" = HOL +
+  options [document = false]
+  theories
+    Lambda_Calculus_Abduction
